@@ -4,9 +4,15 @@ While this project may not be associated with any
 security vulnerability ever:tm:, we'd still encourage everyone
 to report them as soon as possible.
 
-## Supported Versions
+## Supported Program Versions
 
 Right now, the latest version are only supported.
+
+| Version | Supported          |
+| ------- | ------------------ |
+| Latest  | :white_check_mark: |
+
+## Supported GitHub Action Composite Versions
 
 | Version | Supported          |
 | ------- | ------------------ |
