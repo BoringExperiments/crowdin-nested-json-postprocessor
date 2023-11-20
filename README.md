@@ -43,3 +43,7 @@ Before you start, make sure that you have setup the supported version of Python 
     secrets:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                 # optional, default to GitHub's default
 ```
+
+## `> Postprocessor // Contributing`
+
+Consider checking out the [CONTRIBUTING.md](CONTRIBUTING.md) page.
