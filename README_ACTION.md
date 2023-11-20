@@ -2,17 +2,6 @@
 
 Remove null or empty keys, list and array from JSON files.
 
-| Python version | Support status   |
-| -------------- | ---------------- |
-| Upcoming       | ⚙️ Best effort   |
-| 3.12           | ✅ Supported     |
-| 3.11           | ✅ Supported     |
-| 3.10           | ✅ Supported     |
-| 3.9            | ✅ Supported     |
-| 3.8            | ⚙️ Best effort   |
-| 3.7            | ⚙️ Best effort   |
-| =<3.6          | ❌ Not Supported |
-
 ## `> Postprocessor // Usage`
 
 Before you start, make sure that you have setup the supported version of Python in your workflow:

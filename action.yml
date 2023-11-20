@@ -1,17 +1,18 @@
-name: "Python Script Action"
-description: "Runs a Python script and commits the changes"
+name: "Crowdin Nested JSON Postprocessor"
+description: "Runs a Python script that remove empty string in JSON caused by Crowdin not respecting skip untranslated strings"
+
 inputs:
   source_dir:
-    description: 'The source directory to copy'
+    description: "The source directory to copy"
     required: true
   destination_dir:
-    description: 'The destination directory (optional)'
+    description: "The destination directory (optional)"
     required: false
   signing_key:
-    description: 'The GPG key to sign commits (optional)'
+    description: "The GPG key to sign commits (optional)"
     required: false
   commit_message:
-    description: 'Commit message (optional)'
+    description: "Commit message (optional)"
     required: false
     default: "JSON Cleanup"
 
