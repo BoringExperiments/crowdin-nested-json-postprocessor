@@ -1,6 +1,10 @@
-# `> Nested JSON Postprocessor`
+# GitHub Action `> Nested JSON Postprocessor`
 
 Remove null or empty keys, list and array from JSON files.
+
+## `> Postprocessor // Usage`
+
+Before you start, make sure that you have setup the supported version of Python in your workflow:
 
 | Python version | Support status   |
 | -------------- | ---------------- |
@@ -13,24 +17,29 @@ Remove null or empty keys, list and array from JSON files.
 | 3.7            | ⚙️ Best effort   |
 | =<3.6          | ❌ Not Supported |
 
-## `> Postprocessor // Usage`
+```yml
+  - name: Set up Python 3.12
+    uses: actions/setup-python@v4
+    with:
+      python-version: 3.12
+```
 
-> [!IMPORTANT]  
-> This guide assume that you already installed Python 3.10 or higher
+| Input                  | Required                            | Description        |
+| ---------------------- | ----------------------------------- | ------------------ |
+| `source_dir`           | ✅ Yes                              | Input directory    |
+| `destination_dir`      | ❌ No (default to `source_dir`)     | Output directory   |
+| `signing_key`          | ❌ No                               | Signing key        |
+| `commit_message`       | ❌ No (default to `JSON Cleanup`)   | Commit message     |
+| `secrets.GITHUB_TOKEN` | ❌ No (default to GitHub's default) | GitHub's PAT token |
 
-### `> Postprocessor // Preparing the files`
-
-1. Clone the repository: `git@github.com:validcube/crowdin-nested-json-postprocessor.git`
-2. Create two new folder called: `input` and `output`
-3. Copy the JSON files that you want to process into the `input` folder
-
-### `> Postprocessor // Running the script`
-
-Running the script:
-
-1. Install the required dependencies: `pip3 install -r requirements.txt`
-2. Run the script: `python3 main.py`
-
-## `> Postprocessor // Contributing`
-
-Consider checking out the [CONTRIBUTING.md](CONTRIBUTING.md) page.
+```yml
+  - name: Nested JSON Postprocessor
+    uses: ./.github/actions/python-action ???? # Soon:tm:
+    with:
+      source_dir: 'path/to/your/source/directory'               # required, your input directory
+      destination_dir: 'path/to/your/destination/directory'     # optional, default to source_dir
+      signing_key: 'your-signing-key'                           # optional, will skip signing if not provided
+      commit_message: 'your-custom-commit-message'              # optional, default to "JSON Cleanup"
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                 # optional, default to GitHub's default
+```
