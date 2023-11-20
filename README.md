@@ -34,7 +34,7 @@ Before you start, make sure that you have setup the supported version of Python 
 
 ```yml
   - name: Nested JSON Postprocessor
-    uses: ./.github/actions/python-action ???? # Soon:tm:
+    uses: validcube/crowdin-nested-json-postprocessor@v0.1
     with:
       source_dir: 'path/to/your/source/directory'               # required, your input directory
       destination_dir: 'path/to/your/destination/directory'     # optional, default to source_dir
