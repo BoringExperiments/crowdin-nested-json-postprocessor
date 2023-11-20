@@ -81,7 +81,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         base-python-version: ["3.11"]
-        best_effort-python-version: ["3.7"]
+        best_effort-python-version: ["3.7", "3.8"]
     name: Static analysis on Python ${{ matrix.best_effort-python-version }}
     continue-on-error: true
 
