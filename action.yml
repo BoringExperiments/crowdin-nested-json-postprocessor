@@ -1,0 +1,55 @@
+name: "Python Script Action"
+description: "Runs a Python script and commits the changes"
+inputs:
+  source_dir:
+    description: 'The source directory to copy'
+    required: true
+  destination_dir:
+    description: 'The destination directory (optional)'
+    required: false
+  signing_key:
+    description: 'The GPG key to sign commits (optional)'
+    required: false
+  commit_message:
+    description: 'Commit message (optional)'
+    required: false
+    default: "JSON Cleanup"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup directories and copy files
+      run: |
+        mkdir -p input output
+        cp -r "${{ inputs.source_dir }}"/* input/
+        if [[ -n "${{ inputs.destination_dir }}" ]]; then
+          DESTINATION_DIR="${{ inputs.destination_dir }}"
+        else
+          DESTINATION_DIR=input
+        fi
+      shell: bash
+
+    - name: Run Python script
+      run: python3 main.py
+      shell: bash
+
+    - name: Copy output files
+      run: |
+        cp -r output/* "$DESTINATION_DIR/"
+      shell: bash
+
+    - name: Commit changes
+      run: |
+        echo "Committing changes..."
+        if [[ -n "${{ inputs.signing_key }}" ]]; then
+          git config --global user.signingkey "${{ inputs.signing_key }}"
+          git config --global commit.gpgsign true
+          COMMIT_OPTIONS="-S"
+        else
+          COMMIT_OPTIONS=""
+        fi
+        echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+        git add .
+        git commit $COMMIT_OPTIONS -m ${{ inputs.commit_message }}
+        git push
+      shell: bash
