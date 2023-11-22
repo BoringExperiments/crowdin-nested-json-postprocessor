@@ -2,6 +2,9 @@ name: "Crowdin Nested JSON Postprocessor"
 description: "Runs a Python script that remove empty string in JSON caused by Crowdin not respecting skip untranslated strings"
 
 inputs:
+  token:
+    description: "The GitHub personal access token required to push commits."
+    required: true
   source_dir:
     description: "The source directory to copy"
     required: true
@@ -49,7 +52,7 @@ runs:
         else
           COMMIT_OPTIONS=""
         fi
-        echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+        echo "${{ inputs.token }}" | gh auth login --with-token
         git add .
         git commit $COMMIT_OPTIONS -m ${{ inputs.commit_message }}
         git push
