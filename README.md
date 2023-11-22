@@ -36,12 +36,11 @@ Before you start, make sure that you have setup the supported version of Python 
   - name: Nested JSON Postprocessor
     uses: validcube/crowdin-nested-json-postprocessor@v0.1
     with:
+      token: ${{ secrets.GITHUB_TOKEN }}                        # required, your push token
       source_dir: 'path/to/your/source/directory'               # required, your input directory
       destination_dir: 'path/to/your/destination/directory'     # optional, default to source_dir
       signing_key: 'your-signing-key'                           # optional, will skip signing if not provided
       commit_message: 'your-custom-commit-message'              # optional, default to "JSON Cleanup"
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                 # optional, default to GitHub's default
 ```
 
 ## `> Postprocessor // Contributing`
