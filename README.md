@@ -26,11 +26,11 @@ Before you start, make sure that you have setup the supported version of Python 
 
 | Input                  | Required                            | Description        |
 | ---------------------- | ----------------------------------- | ------------------ |
+| `token`                | ✅ Yes                              | GitHub token |
 | `source_dir`           | ✅ Yes                              | Input directory    |
 | `destination_dir`      | ❌ No (default to `source_dir`)     | Output directory   |
 | `signing_key`          | ❌ No                               | Signing key        |
 | `commit_message`       | ❌ No (default to `JSON Cleanup`)   | Commit message     |
-| `secrets.GITHUB_TOKEN` | ❌ No (default to GitHub's default) | GitHub's PAT token |
 
 ```yml
   - name: Nested JSON Postprocessor
