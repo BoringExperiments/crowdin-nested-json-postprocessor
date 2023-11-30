@@ -3,7 +3,7 @@ description: "Runs a Python script that remove empty string in JSON caused by Cr
 
 inputs:
   token:
-    description: "The GitHub personal access token required to push commits."
+    description: "GitHub's Personal Access Token"
     required: true
   source_dir:
     description: "The source directory to copy"
