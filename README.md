@@ -24,19 +24,19 @@ Before you start, make sure that you have setup the supported version of Python 
     python-version: 3.12
 ```
 
-| Input             | Required                          | Description      |
-| ----------------- | --------------------------------- | ---------------- |
-| `token`           | ✅ Yes                            | GitHub token     |
-| `source_dir`      | ✅ Yes                            | Input directory  |
-| `destination_dir` | ❌ No (default to `source_dir`)   | Output directory |
-| `signing_key`     | ❌ No                             | Signing key      |
-| `commit_message`  | ❌ No (default to `JSON Cleanup`) | Commit message   |
+| Input             | Required                          | Description                    |
+| ----------------- | --------------------------------- | ------------------------------ |
+| `token`           | ✅ Yes                            | GitHub's Personal Access Token |
+| `source_dir`      | ✅ Yes                            | Input directory                |
+| `destination_dir` | ❌ No (default to `source_dir`)   | Output directory               |
+| `signing_key`     | ❌ No                             | Signing key                    |
+| `commit_message`  | ❌ No (default to `JSON Cleanup`) | Commit message                 |
 
 ```yml
 - name: Nested JSON Postprocessor
   uses: validcube/crowdin-nested-json-postprocessor@v0.1
   with:
-    token: ${{ secrets.GITHUB_TOKEN }} # required, your push token
+    token: ${{ secrets.GITHUB_TOKEN }} # required, GitHub's Personal Access Token
     source_dir: "path/to/your/source/directory" # required, your input directory
     destination_dir: "path/to/your/destination/directory" # optional, default to source_dir
     signing_key: "your-signing-key" # optional, will skip signing if not provided
