@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.supported-python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.supported-python-version }}
           allow-prereleases: true
@@ -92,7 +92,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.base-python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.base-python-version }}
           allow-prereleases: true
