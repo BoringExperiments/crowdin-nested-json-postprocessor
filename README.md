@@ -19,7 +19,7 @@ Before you start, make sure that you have setup the supported version of Python 
 
 ```yml
 - name: Set up Python 3.12
-  uses: actions/setup-python@v4
+  uses: actions/setup-python@v5
   with:
     python-version: 3.12
 ```
