@@ -9,6 +9,8 @@ on:
       - "dev-requirements.txt"
       - ".github/workflows/python.yml"
   push:
+    branches:
+      - main
     paths:
       - "**.py"
 
