@@ -1,6 +1,8 @@
+# mypy: disable-error-code="import-not-found"
+
 import os
 
-from .postprocessor import postprocessor
+import postprocessor
 
 
 def main():
