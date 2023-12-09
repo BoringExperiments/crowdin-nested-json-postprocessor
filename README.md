@@ -8,7 +8,6 @@ Before you start, make sure that you have setup the supported version of Python 
 
 | Python version | Support status   |
 | -------------- | ---------------- |
-| Upcoming       | ⚙️ Best effort   |
 | 3.12           | ✅ Supported     |
 | 3.11           | ✅ Supported     |
 | 3.10           | ✅ Supported     |
