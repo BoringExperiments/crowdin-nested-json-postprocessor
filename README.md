@@ -18,7 +18,7 @@ Before you start, make sure that you have setup the supported version of Python 
 
 ```yml
 - name: Set up Python 3.12
-  uses: actions/setup-python@v4
+  uses: actions/setup-python@v5
   with:
     python-version: 3.12
 ```
@@ -33,13 +33,23 @@ Before you start, make sure that you have setup the supported version of Python 
 
 ```yml
 - name: Nested JSON Postprocessor
-  uses: validcube/crowdin-nested-json-postprocessor@v0.1
+  uses: validcube/crowdin-nested-json-postprocessor@v0.1.2
   with:
-    token: ${{ secrets.GITHUB_TOKEN }} # required, GitHub's Personal Access Token
-    source_dir: "path/to/your/source/directory" # required, your input directory
-    destination_dir: "path/to/your/destination/directory" # optional, default to source_dir
-    signing_key: "your-signing-key" # optional, will skip signing if not provided
-    commit_message: "your-custom-commit-message" # optional, default to "JSON Cleanup"
+
+    # required, GitHub's Personal Access Token
+    token: ${{ secrets.GITHUB_TOKEN }}
+
+    # required, your input directory
+    source_dir: "path/to/your/source/directory"
+
+    # optional, default to source_dir
+    destination_dir: "path/to/your/destination/directory"
+
+    # optional
+    signing_key: "your-signing-key"
+    
+    # optional, default to "JSON Cleanup"
+    commit_message: "your-custom-commit-message"
 ```
 
 ## `> Postprocessor // Contributing`
