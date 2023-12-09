@@ -8,14 +8,12 @@ Before you start, make sure that you have setup the supported version of Python 
 
 | Python version | Support status   |
 | -------------- | ---------------- |
-| Upcoming       | ⚙️ Best effort   |
 | 3.12           | ✅ Supported     |
 | 3.11           | ✅ Supported     |
 | 3.10           | ✅ Supported     |
 | 3.9            | ✅ Supported     |
 | 3.8            | ⚙️ Best effort   |
-| 3.7            | ⚙️ Best effort   |
-| =<3.6          | ❌ Not Supported |
+| <=3.7          | ❌ Not Supported |
 
 ```yml
 - name: Set up Python 3.12
@@ -34,13 +32,23 @@ Before you start, make sure that you have setup the supported version of Python 
 
 ```yml
 - name: Nested JSON Postprocessor
-  uses: validcube/crowdin-nested-json-postprocessor@v0.1
+  uses: validcube/crowdin-nested-json-postprocessor@v0.1.2
   with:
-    token: ${{ secrets.GITHUB_TOKEN }} # required, GitHub's Personal Access Token
-    source_dir: "path/to/your/source/directory" # required, your input directory
-    destination_dir: "path/to/your/destination/directory" # optional, default to source_dir
-    signing_key: "your-signing-key" # optional, will skip signing if not provided
-    commit_message: "your-custom-commit-message" # optional, default to "JSON Cleanup"
+
+    # required, GitHub's Personal Access Token
+    token: ${{ secrets.GITHUB_TOKEN }}
+
+    # required, your input directory
+    source_dir: "path/to/your/source/directory"
+
+    # optional, default to source_dir
+    destination_dir: "path/to/your/destination/directory"
+
+    # optional
+    signing_key: "your-signing-key"
+    
+    # optional, default to "JSON Cleanup"
+    commit_message: "your-custom-commit-message"
 ```
 
 ## `> Postprocessor // Contributing`

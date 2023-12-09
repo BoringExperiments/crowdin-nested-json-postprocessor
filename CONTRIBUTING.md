@@ -5,7 +5,7 @@ Thanks for consider contributing.
 ### `> Python`
 
 > [!IMPORTANT]  
-> This guide assume that you already installed Python 3.10 or higher and pytest.
+> This guide assume that you already installed Python 3.9 or higher and pytest.
 
 Developing the script:
 
