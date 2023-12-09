@@ -13,8 +13,7 @@ Before you start, make sure that you have setup the supported version of Python 
 | 3.10           | ✅ Supported     |
 | 3.9            | ✅ Supported     |
 | 3.8            | ⚙️ Best effort   |
-| 3.7            | ⚙️ Best effort   |
-| =<3.6          | ❌ Not Supported |
+| <=3.7          | ❌ Not Supported |
 
 ```yml
 - name: Set up Python 3.12

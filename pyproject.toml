@@ -20,7 +20,8 @@ Issues = "https://github.com/validcube/crowdin-nested-json-postprocessor/issues"
 # Documentation = "https://github.com/validcube/crowdin-nested-json-postprocessor/docs"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+# TODO(maintainer): Move to supported version (Python 3.9) when needed
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.2"

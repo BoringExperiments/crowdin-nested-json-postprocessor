@@ -30,8 +30,7 @@ Right now, the latest version are only supported.
 | 3.10    | :white_check_mark:     |
 | 3.9     | :white_check_mark:     |
 | 3.8     | :white_check_mark:[^1] |
-| 3.7     | :white_check_mark:[^1] |
-| 3.6=<   | :x:                    |
+| 3.7=<   | :x:                    |
 
 ## Reporting a Vulnerability
 
