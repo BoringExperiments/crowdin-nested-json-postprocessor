@@ -28,7 +28,6 @@ ruff = "^0.1.1"
 mypy = "^1.6.1"
 
 [tool.ruff]
-indent-width = 2
 target-version = "py38"
 extend-exclude = ["tests/**"]
 
